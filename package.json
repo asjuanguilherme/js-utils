@@ -6,6 +6,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
+    "prepare": "husky install && chmod ug+x .husky/*",
     "postinstall": "husky prepare",
     "create-index-file": "node ./generateIndexFile.js",
     "build": "rollup -c",
