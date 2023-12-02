@@ -4,7 +4,6 @@ import commonJs from '@rollup/plugin-commonjs'
 import babel from '@rollup/plugin-babel'
 import typescript from '@rollup/plugin-typescript'
 import { terser } from 'rollup-plugin-terser'
-import generateIndexFile from './generateIndexFile.mjs'
 
 import { createRequire } from 'node:module'
 const require = createRequire(import.meta.url)
@@ -28,7 +27,6 @@ export default [
       },
     ],
     plugins: [
-      generateIndexFile(),
       peerDepsExternal(),
       typescript({ tsconfig: './tsconfig.json' }),
       nodeResolve({

@@ -2,7 +2,7 @@ import { promises as fsPromises, unlinkSync } from 'fs'
 import { join } from 'path'
 import { glob } from 'glob'
 
-function generateIndexFile() {
+async function generateIndexFile() {
   const indexPath = join('./src', 'index.ts')
   const files = glob.sync('*.ts', { cwd: './src' })
 
@@ -12,29 +12,16 @@ function generateIndexFile() {
       .map(file => `export * from './${file.split('.')[0]}'`)
       .join('\n') + '\n'
 
-  const callback = async () => {
-    try {
-      unlinkSync(indexPath)
-      console.log(`Cleaning ${indexPath}`)
-      await fsPromises.writeFile(indexPath, content)
-      console.log(`Generated ${indexPath}`)
-    } catch (error) {
-      console.error(`Error generating ${indexPath}:`, error)
-    }
-  }
-
-  return {
-    name: 'create-index-file',
-    async watchChanges() {
-      await callback()
-    },
-    async buildStart() {
-      await callback()
-    },
-    async buildEnd() {
-      await callback()
-    },
+  try {
+    unlinkSync(indexPath)
+    console.log(`Cleaning ${indexPath}`)
+    await fsPromises.writeFile(indexPath, content)
+    console.log(`Generated ${indexPath}`)
+  } catch (error) {
+    console.error(`Error generating ${indexPath}:`, error)
   }
 }
+
+generateIndexFile()
 
 export default generateIndexFile
