@@ -9,7 +9,8 @@
     "postinstall": "husky prepare",
     "create-index-file": "node ./generateIndexFile.js",
     "build": "rollup -c",
-    "dev": "rollup -c -w"
+    "dev": "rollup -c -w",
+    "format": "prettier --write --ignore-unknown"
   },
   "repository": {
     "type": "git",
