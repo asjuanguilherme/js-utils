@@ -6,6 +6,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
+    "postinstall": "husky prepare",
     "create-index-file": "node ./generateIndexFile.js",
     "build": "rollup -c",
     "dev": "rollup -c -w"
@@ -42,6 +43,7 @@
     "@types/react": "^18.2.40",
     "@types/react-dom": "^18.2.17",
     "ctix": "^2.3.0",
+    "husky": "^8.0.3",
     "prettier": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
