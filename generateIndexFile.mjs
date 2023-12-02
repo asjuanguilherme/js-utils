@@ -6,10 +6,11 @@ function generateIndexFile() {
   const indexPath = join('./src', 'index.ts')
   const files = glob.sync('*.ts', { cwd: './src' })
 
-  const content = files
-    .filter(i => i !== 'index.ts')
-    .map(file => `export * from './${file.split('.')[0]}'`)
-    .join('\n')
+  const content =
+    files
+      .filter(i => i !== 'index.ts')
+      .map(file => `export * from './${file.split('.')[0]}'`)
+      .join('\n') + '\n'
 
   const callback = async () => {
     try {
