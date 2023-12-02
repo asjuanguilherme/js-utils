@@ -1,6 +1,6 @@
 {
   "name": "@asjuanguilherme/js-utils",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -10,7 +10,6 @@
   ],
   "scripts": {
     "prepare": "husky install && chmod ug+x .husky/*",
-    "postinstall": "husky prepare",
     "create-index-file": "node ./generateIndexFile.js",
     "build": "rollup -c",
     "dev": "rollup -c -w",
