@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "description": "",
   "main": "./dist/index.js",
-  "scripts": {},
+  "scripts": {
+    "create-index-file": "node ./generateIndexFile.js",
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/asjuanguilherme/js-utils.git"
@@ -24,5 +28,25 @@
   "homepage": "https://github.com/asjuanguilherme/js-utils#readme",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "devDependencies": {
+    "@asjuanguilherme/prettier-config": "^1.0.0",
+    "@asjuanguilherme/tsconfig": "^0.1.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/react": "^18.2.40",
+    "@types/react-dom": "^18.2.17",
+    "ctix": "^2.3.0",
+    "prettier": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.6.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^5.3.2"
+  },
+  "prettier": "@asjuanguilherme/prettier-config"
 }
