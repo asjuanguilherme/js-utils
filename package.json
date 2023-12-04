@@ -1,6 +1,6 @@
 {
   "name": "@asjuanguilherme/js-utils",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -13,7 +13,8 @@
     "create-index-file": "node ./generateIndexFile.mjs",
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "format": "prettier --write --ignore-unknown"
+    "format": "prettier --write --ignore-unknown",
+    "release": "yarn build && npm publish"
   },
   "repository": {
     "type": "git",
