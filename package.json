@@ -1,6 +1,6 @@
 {
   "name": "@asjuanguilherme/js-utils",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -14,7 +14,8 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "format": "prettier --write --ignore-unknown",
-    "release": "yarn build && npm publish"
+    "release": "npm publish",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
