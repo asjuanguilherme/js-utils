@@ -1,9 +1,9 @@
+import { regexPatterns } from 'regexPatterns'
 import { missingItemsOnSecondArray } from './missingItemsOnSecondArray'
 import { objectKeys } from './objectConstructor'
-import { HANDLEBAR_VARIABLE_REGEX } from './regex'
 
 export const getHandlebarVariablesListFromText = (texto: string) => {
-  const foundedVariables = texto.match(HANDLEBAR_VARIABLE_REGEX) || []
+  const foundedVariables = texto.match(regexPatterns.handlebarVariable) || []
 
   if (!foundedVariables)
     throw new Error('The entered text has no handlebar variables.')

@@ -19,21 +19,34 @@ export default [
         format: 'cjs',
         sourcemap: true,
         name: 'asjuanguilherme-js-utils',
+        interop: 'auto',
+        globals: {
+          react: 'React',
+        },
       },
       {
         file: packageJson.module,
         format: 'esm',
         sourcemap: true,
+        interop: 'auto',
+        globals: {
+          react: 'React',
+        },
       },
     ],
     plugins: [
       peerDepsExternal(),
-      typescript({ tsconfig: './tsconfig.json' }),
       nodeResolve({
         extensions: ['.ts', '.tsx'],
       }),
-      babel(),
       commonJs(),
+      typescript({ tsconfig: './tsconfig.json' }),
+      babel({
+        babelHelpers: 'bundled',
+        exclude: ['node_modules'],
+        presets: ['@babel/preset-react', '@babel/preset-typescript'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      }),
       terser(),
     ],
   },
