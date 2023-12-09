@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { UserAgent } from 'express-useragent'
 
 type ScreenSize = {
   height: number
@@ -9,13 +8,9 @@ type ScreenSize = {
 export type UseScreenSizeProps = () => ScreenSize
 
 export const useScreenSize: UseScreenSizeProps = () => {
-  const userAgent = new UserAgent().parse(navigator.userAgent)
-
-  const isMobile = userAgent.isMobile || userAgent.isTablet
-
   const [currentScreen, setCurrentScreen] = useState<ScreenSize>({
-    height: isMobile ? 480 : 720,
-    width: isMobile ? 320 : 1250,
+    height: 720,
+    width: 1250,
   })
 
   useEffect(() => {

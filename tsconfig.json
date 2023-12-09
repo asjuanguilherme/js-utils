@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
-    "declaration": true,
-    "declarationDir": "."
+    "baseUrl": "./src"
   },
   "extends": "@asjuanguilherme/tsconfig/base.json",
   "include": [".", "src/assets"],
