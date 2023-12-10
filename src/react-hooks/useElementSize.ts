@@ -6,7 +6,7 @@ export type UseElementSizeProps = {
     height?: number
     width?: number
   }
-  deps?: any[]
+  deps?: unknown[]
 }
 
 export const useElementSize = ({

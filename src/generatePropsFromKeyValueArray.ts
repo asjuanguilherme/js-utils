@@ -4,7 +4,7 @@ export const generatePropsFromKeyValueArray = (
     value: string
   }[],
 ) => {
-  const props: { [key: string]: any } = {}
+  const props: { [key: string]: unknown } = {}
 
   data.map(({ key, value }) => {
     props[key] = value

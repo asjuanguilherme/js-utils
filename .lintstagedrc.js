@@ -1,4 +1,4 @@
 module.exports = {
-  '**/*.{js,jsx,ts,tsx,md,json}': filenames =>
-    `yarn format ${filenames.join(' ')}`,
+  '**/**': filenames => `npm run format ${filenames.join(' ')}`,
+  '**/**': filenames => `npm run lint ${filenames.join(' ')} --fix`,
 }

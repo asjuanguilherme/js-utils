@@ -3,6 +3,6 @@
     "baseUrl": "./src"
   },
   "extends": "@asjuanguilherme/tsconfig/base.json",
-  "include": [".", "src/assets"],
+  "include": [".", "src/assets", ".prettierrc.mjs"],
   "exclude": ["dist", "node_modules"]
 }

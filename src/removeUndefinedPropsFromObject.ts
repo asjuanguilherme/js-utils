@@ -1,18 +1,26 @@
-export const removeUndefinedPropsFromObject = (object: {
-  [key: string]: any
-}): { [key: string]: any } => {
-  const modifiedObject: { [key: string]: any } = {}
+/* eslint-disable no-prototype-builtins */
+
+type RecursiveObject<T> = { [key: string]: T | RecursiveObject<T> }
+
+export const removeUndefinedPropsFromObject = <T>(
+  object: RecursiveObject<T>,
+): RecursiveObject<T> => {
+  const modifiedObject: RecursiveObject<T> = {}
 
   for (const key in object) {
     if (object.hasOwnProperty(key)) {
-      if (typeof object[key] === 'object') {
-        modifiedObject[key] = removeUndefinedPropsFromObject(object[key])
+      const value = object[key]
 
-        if (Object.keys(modifiedObject[key]).length === 0) {
-          delete modifiedObject[key]
+      if (typeof value === 'object') {
+        const modifiedValue = removeUndefinedPropsFromObject(
+          value as RecursiveObject<T>,
+        )
+
+        if (Object.keys(modifiedValue).length > 0) {
+          modifiedObject[key] = modifiedValue
         }
-      } else if (typeof object[key] !== 'undefined') {
-        modifiedObject[key] = object[key]
+      } else if (typeof value !== 'undefined') {
+        modifiedObject[key] = value
       }
     }
   }

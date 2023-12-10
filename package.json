@@ -1,6 +1,6 @@
 {
   "name": "@asjuanguilherme/js-utils",
-  "version": "0.4.1",
+  "version": "0.4.3",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -9,11 +9,11 @@
     "dist/**"
   ],
   "scripts": {
-    "prepare": "husky install && chmod ug+x .husky/*",
+    "prepare": "husky install",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "format": "prettier --write --ignore-unknown",
-    "release": "npm publish",
+    "lint": "eslint --ext ts",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -38,6 +38,7 @@
     "access": "public"
   },
   "devDependencies": {
+    "@asjuanguilherme/eslint-config": "^0.1.2",
     "@asjuanguilherme/prettier-config": "^1.0.0",
     "@asjuanguilherme/tsconfig": "^0.1.0",
     "@babel/core": "^7.23.5",
@@ -49,9 +50,16 @@
     "@rollup/plugin-typescript": "^11.1.5",
     "@types/react": "^18.2.40",
     "@types/react-dom": "^18.2.17",
-    "ctix": "^2.3.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import-helpers": "^1.3.1",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
-    "lint-staged": "^15.1.0",
+    "lint-staged": "^15.2.0",
     "prettier": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -62,9 +70,8 @@
     "rollup-plugin-terser": "^7.0.2",
     "typescript": "^5.3.2"
   },
-  "prettier": "@asjuanguilherme/prettier-config",
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": ">=18.x.x",
+    "react-dom": ">=18.x.x"
   }
 }

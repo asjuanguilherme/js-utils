@@ -1,4 +1,5 @@
 import { regexPatterns } from 'regexPatterns'
+
 import { missingItemsOnSecondArray } from './missingItemsOnSecondArray'
 import { objectKeys } from './objectConstructor'
 
@@ -21,7 +22,7 @@ export const applyVariablesOnTextWithHandlebarVariables = (
 ): string => {
   const enteredVariablesList = objectKeys(variables)
   const variablesList = getHandlebarVariablesListFromText(text)
-  const missingVariables: string[] = missingItemsOnSecondArray(
+  const missingVariables = missingItemsOnSecondArray(
     variablesList,
     enteredVariablesList,
   )
