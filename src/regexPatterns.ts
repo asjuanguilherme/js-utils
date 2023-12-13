@@ -11,4 +11,5 @@ export const regexPatterns = {
   brazilianPostcode: /^\d{5}-\d{3}$/,
   brazilianCPF: /^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}-?[0-9]{2}|[0-9]{11})$/,
   brazilianPhone: /^\(\d{2}\) \d{5}-\d{4}$/,
+  percentNumber: /^\d+(\.\d+)?%$/,
 }
