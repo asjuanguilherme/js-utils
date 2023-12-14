@@ -21,9 +21,8 @@ export const getFieldValidationMessage = (fieldName: string) => {
       `A lista ${fieldName} deve ter pelo menos ${minLength} elementos.`,
     arrayMaxLength: (maxLength: number) =>
       `A lista ${fieldName} deve ter no máximo ${maxLength} elementos.`,
-    passwordLength: (minLength: number) =>
-      `A senha ${fieldName} deve ter pelo menos ${minLength} caracteres.`,
-    passwordSpecialChars: 'A senha deve conter caracteres especiais.',
+    specialChars: `${fieldName} deve conter caracteres especiais.`,
+    passwordPattern: `${fieldName} deve conter pelo menos uma letra maiúscula, um caractere especial e um número.`,
     success: `${fieldName} válido!`,
     dateInvalid: `${fieldName} possui uma data inválida.`,
     timeInvalid: `${fieldName} possui um horário inválido.`,
